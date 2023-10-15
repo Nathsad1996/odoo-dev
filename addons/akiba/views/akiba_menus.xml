@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <menuitem id="test_menu_root" name="AKIBA">
+        <menuitem id="test_first_level_menu" name="AKIBA">
+            <menuitem id="transactions_menu_action" action="transactions_action"/>
+        </menuitem>
+    </menuitem>
+</odoo>

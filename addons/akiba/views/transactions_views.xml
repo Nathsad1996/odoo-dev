@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="transactions_action" model="ir.actions.act_window">
+        <field name="name">Transactions</field>
+        <field name="res_model">transactions</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="transactions_view_form">
+        <field name="name">New Transactions</field>
+        <field name="model">transactions</field>
+        <field name="arch" type="xml">
+            <div class="card m-5">
+                <div class="card-body">
+                    <div class="card-title h2 text-center">
+                        Nouveau Paiement
+                    </div>
+                    <div class="card-text">
+                        <form string="transaction">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-4 d-flex flex-row">
+                                        <label for="reference" class="align-self-center"/>
+                                        <field class="form-control" name="reference"/>
+                                    </div>
+                                    <div class="col-4 d-flex flex-row">
+                                        <label for="amount" class="align-self-center"/>
+                                        <field class="form-control" name="amount"/>
+                                    </div>
+                                    <div class="col-3 d-flex flex-row">
+                                        <label for="currency" class="align-self-center"/>
+                                        <field class="form-control" name="currency"/>
+                                    </div>
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-4 d-flex flex-row">
+                                        <label for="customer_number" class="align-self-center"/>
+                                        <field class="form-control" name="customer_number"/>
+                                    </div>
+                                    <div class="col-4 d-flex flex-row">
+                                        <label for="method" class="align-self-center"/>
+                                        <field class="form-control" name="method"/>
+                                    </div>
+                                    <div class="col-3 d-flex flex-row">
+                                        <label for="operator" class="align-self-center"/>
+                                        <field class="form-control" name="operator"/>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center mt-5">
+                                    <div class="col">
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-primary btn-lg" type="object"
+                                                    name="make_transaction">Faire
+                                                Payer le
+                                                client
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </field>
+    </record>
+
+
+    <record id="transactions_view_tree" model="ir.ui.view">
+        <field name="name">transactions.tree</field>
+        <field name="model">transactions</field>
+        <field name="arch" type="xml">
+            <tree string="transactions" edit="0" delete="0" style="pointer-events:none;">
+                <field name="create_date" style="pointer-events:none;"/>
+                <field name="write_date" style="pointer-events:none;"/>
+                <field name="reference" style="pointer-events:none;"/>
+                <field name="amount" style="pointer-events:none;"/>
+                <field name="currency" style="pointer-events:none;"/>
+                <field name="customer_number" style="pointer-events:none;"/>
+                <field name="method" style="pointer-events:none;"/>
+                <field name="operator" style="pointer-events:none;"/>
+                <field name="status" style="pointer-events:none;"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
